@@ -12,4 +12,7 @@
   *  Hint: the Scala collections API is your friend
   *  https://docs.scala-lang.org/overviews/collections-2.13/overview.html
   */
-def rainfall(data: Seq[Double]): Double = throw new NotImplementedError
+def rainfall(data: Seq[Double]): Double = {
+  val processedData = data.takeWhile(n => n != -999).filter(n => n >= 0)
+  processedData.sum / processedData.length
+}
